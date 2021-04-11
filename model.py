@@ -602,6 +602,7 @@ class ExportView(QWidget):
 		print()
 		self.pbar.show()
 		self.exportbtn.setEnabled(False)
+		
 		with open(os.getcwd() + "\\tmp\\export.json", "r") as f:
 			data = json.load(f)
 
@@ -618,7 +619,7 @@ class ExportView(QWidget):
 		self.thread._signal.connect(self.signal_accept)
 		self.thread.start()
 
-		#print(data["imagepath"], data["videopath"])
+		
 
 class ModelBase(SlidingStackedWidget):
 	def __init__(self):
